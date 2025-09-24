@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Basics to Advanced</title>
+  <style>
+    body {font-family: Arial, sans-serif; margin: 20px; line-height: 1.6;}
+    h1, h2 {color: darkblue;}
+    table {border-collapse: collapse; width: 60%; margin-top: 10px;}
+    table, th, td {border: 1px solid black;}
+    th, td {padding: 8px; text-align: left;}
+    form {margin-top: 20px;}
+    input, textarea, select {margin: 5px 0; padding: 5px;}
+    div.example {background-color: lightblue; padding: 15px; margin-bottom: 15px;}
+    span.highlight {color: darkred; font-weight: bold;}
+  </style>
+</head>
+<body>
+  <h1>HTML Website: Basics to Advanced</h1>
+
+  <h2>1. Div and Span Example</h2>
+  <div class="example">
+    This is a <b>div</b> block. It takes the full width available by default.<br>
+    Inside this div, we can highlight words using the <span class="highlight">span tag</span> with a different color.
+  </div>
+
+  <h2>2. Headings</h2>
+  <h1>Heading 1</h1>
+  <h2>Heading 2</h2>
+  <h3>Heading 3</h3>
+
+  <h2>3. Paragraphs and Links</h2>
+  <p>This is a simple paragraph. HTML is used to structure web content.</p>
+  <p>Visit <a href="https://www.google.com" target="_blank">Google</a></p>
+
+  <h2>4. Images</h2>
+  <img src="https://via.placeholder.com/150" alt="Sample Image">
+
+  <h2>5. Lists</h2>
+  <p>Ordered List:</p>
+  <ol>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+  </ol>
+  <p>Unordered List:</p>
+  <ul>
+    <li>Apple</li>
+    <li>Banana</li>
+    <li>Cherry</li>
+  </ul>
+
+  <h2>6. Table Example</h2>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+      <th>City</th>
+    </tr>
+    <tr>
+      <td>Aditya Sachan</td>
+      <td>23</td>
+      <td>Delhi</td>
+    </tr>
+    <tr>
+      <td>rrishabk</td>
+      <td>20</td>
+      <td>Mumbai</td>
+    </tr>
+    <tr>
+      <td>bbhavya</td>
+      <td>20</td>
+      <td>Bangalore</td>
+    </tr>
+  </table>
+
+  <h2>7. Basic Text Formatting</h2>
+  <p>This is <b>bold</b> text, this is <i>italic</i> text, this is <u>underlined</u> text.</p>
+  <p>H<sub>2</sub>O uses <sub>subscript</sub> and 2<sup>3</sup> uses <sup>superscript</sup>.</p>
+  <p>Line break example:<br>This text appears after a line break.</p>
+  <center>This text is centered using the <b>&lt;center&gt;</b> tag.</center>
+
+  <h2>8. Forms (Simple Inputs)</h2>
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name"><br><br>
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password"><br><br>
+
+    <label for="gender">Gender:</label>
+    <input type="radio" id="male" name="gender" value="male"> Male
+    <input type="radio" id="female" name="gender" value="female"> Female<br><br>
+
+    <label for="fruits">Choose a fruit:</label>
+    <select id="fruits" name="fruits">
+      <option value="apple">Apple</option>
+      <option value="banana">Banana</option>
+      <option value="cherry">Cherry</option>
+    </select><br><br>
+
+    <textarea rows="3" cols="30">Write something here...</textarea><br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+</body>
+</html>
