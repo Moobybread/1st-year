@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSI Dev Wing // Code. Create. Conquer.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            overflow-x: hidden;
+        }
+
+        .glow-effect {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(29, 78, 216, 0.3), transparent 70%);
+            animation: pulse 5s infinite ease-in-out;
+            z-index: -1;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.3; }
+            50% { transform: scale(1.2); opacity: 0.5; }
+        }
+
+        .glitch-text {
+            position: relative;
+            font-weight: 900;
+            color: #f8fafc;
+            animation: glitch 1.5s infinite;
+        }
+
+        .glitch-text::before,
+        .glitch-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0f172a;
+        }
+
+        .glitch-text::before {
+            left: 2px;
+            text-shadow: -2px 0 #ef4444;
+            animation: glitch-anim 2s infinite linear alternate-reverse;
+        }
+
+        .glitch-text::after {
+            left: -2px;
+            text-shadow: -2px 0 #3b82f6;
+            animation: glitch-anim-2 3s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim {
+            0% { clip-path: inset(85% 0 1% 0); }
+            20% { clip-path: inset(50% 0 48% 0); }
+            40% { clip-path: inset(10% 0 30% 0); }
+            60% { clip-path: inset(90% 0 5% 0); }
+            80% { clip-path: inset(40% 0 55% 0); }
+            100% { clip-path: inset(70% 0 20% 0); }
+        }
+
+        @keyframes glitch-anim-2 {
+            0% { clip-path: inset(2% 0 90% 0); }
+            20% { clip-path: inset(80% 0 5% 0); }
+            40% { clip-path: inset(45% 0 45% 0); }
+            60% { clip-path: inset(15% 0 70% 0); }
+            80% { clip-path: inset(95% 0 2% 0); }
+            100% { clip-path: inset(60% 0 30% 0); }
+        }
+
+        .card {
+            background: rgba(30, 41, 59, 0.6);
+            border: 1px solid #334155;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.5), 0 0 10px rgba(236, 72, 153, 0.3);
+        }
+
+        .tool-icon {
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+        .tool-icon:hover {
+            transform: scale(1.2);
+            filter: drop-shadow(0 0 10px #ffffff);
+        }
+    </style>
+</head>
+<body class="relative">
+    <div class="glow-effect"></div>
+
+    <header class="text-center py-20 px-4 min-h-screen flex flex-col justify-center items-center">
+        <img src="images/logo.png" alt="CSI Dev Logo" class="h-24 mx-auto mb-6">
+        <h1 class="glitch-text text-5xl md:text-8xl" data-text="CSI DEV WING">CSI DEV WING</h1>
+        <p class="mt-6 text-lg md:text-xl max-w-2xl text-slate-300">
+            Forging the Future of Technology. We build, we break, we innovate. Welcome to the core of creation.
+        </p>
+    </header>
+
+    <section class="py-20 text-center">
+        <h2 class="text-4xl font-bold mb-12 tracking-wider">OUR ARSENAL</h2>
+        <div class="flex justify-center items-center gap-8 md:gap-16 flex-wrap px-4">
+            <img class="w-16 md:w-20 tool-icon" src="https://cdn.worldvectorlogo.com/logos/html-1.svg" alt="HTML">
+            <img class="w-16 md:w-20 tool-icon" src="https://cdn.worldvectorlogo.com/logos/css-3.svg" alt="CSS">
+            <img class="w-16 md:w-20 tool-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS">
+            <img class="w-16 md:w-20 tool-icon" src="https://cdn.worldvectorlogo.com/logos/react-2.svg" alt="React">
+            <img class="w-16 md:w-20 tool-icon" src="https://cdn.worldvectorlogo.com/logos/github-icon-1.svg" alt="GitHub">
+        </div>
+    </section>
+
+    <main class="py-20 px-4">
+        <h2 class="text-center text-4xl font-bold mb-16 tracking-wider">THE ARCHITECTS OF CODE</h2>
+
+        <section class="mb-20">
+            <h3 class="text-center text-3xl font-semibold mb-10 text-blue-400 tracking-widest">THE MASTERMIND</h3>
+            <div class="flex justify-center">
+                <div class="card rounded-2xl p-6 text-center w-full max-w-md">
+                    <img class="w-40 h-40 rounded-full mx-auto object-cover border-4 border-blue-500" src="images/kushagra.jpg" alt="Kushagra Singh">
+                    <h2 class="text-3xl font-bold mt-6">Kushagra Singh</h2>
+                    <h4 class="text-blue-400 font-semibold text-lg">Budwiser</h4>
+                    <div class="flex justify-center gap-6 mt-4">
+                        <a href="https://www.instagram.com/kuxhagrasingh?igsh=MTRkcGc3dDAxdWlncw==" target="_blank" class="tool-icon"><img class="w-8" src="https://cdn.worldvectorlogo.com/logos/instagram-2016-5.svg" alt="Instagram"></a>
+                        <a href="https://www.linkedin.com/in/kushagra-singh-varanasi?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="tool-icon"><img class="w-8" src="https://cdn.worldvectorlogo.com/logos/linkedin-icon-2.svg" alt="LinkedIn"></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-20">
+            <h3 class="text-center text-3xl font-semibold mb-10 text-pink-400 tracking-widest">THE GUIDES</h3>
+            <div class="flex justify-center gap-8 flex-wrap">
+                <div class="card rounded-2xl p-6 text-center w-full max-w-sm">
+                    <img class="w-32 h-32 rounded-full mx-auto object-cover border-4 border-pink-500" src="images/aditya.jpg" alt="Aditya Sachan">
+                    <h2 class="text-2xl font-bold mt-4">Aditya Sachan</h2>
+                    <h4 class="text-pink-400 font-semibold text-md">Club Advisor</h4>
+                    <div class="flex justify-center gap-5 mt-4">
+                         <a href="https://www.instagram.com/sachan.adityaa/" target="_blank" class="tool-icon"><img class="w-7" src="https://cdn.worldvectorlogo.com/logos/instagram-2016-5.svg" alt="Instagram"></a>
+                         <a href="https://www.linkedin.com/in/aditya0024" target="_blank" class="tool-icon"><img class="w-7" src="https://cdn.worldvectorlogo.com/logos/linkedin-icon-2.svg" alt="LinkedIn"></a>
+                    </div>
+                </div>
+                <div class="card rounded-2xl p-6 text-center w-full max-w-sm">
+                    <img class="w-32 h-32 rounded-full mx-auto object-cover border-4 border-pink-500" src="images/shubham.jpg" alt="Shubham Kumar">
+                    <h2 class="text-2xl font-bold mt-4">Shubham Kumar</h2>
+                    <h4 class="text-pink-400 font-semibold text-md">Club Advisor</h4>
+                    <div class="flex justify-center gap-5 mt-4">
+                        <a href="https://www.instagram.com/shubhamm.kumar.14?igsh=OWRka3JwZHVwZDJ0" target="_blank" class="tool-icon"><img class="w-7" src="https://cdn.worldvectorlogo.com/logos/instagram-2016-5.svg" alt="Instagram"></a>
+                        <a href="https://www.linkedin.com/in/shubham-kumar-235602245?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="tool-icon"><img class="w-7" src="https://cdn.worldvectorlogo.com/logos/linkedin-icon-2.svg" alt="LinkedIn"></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3 class="text-center text-3xl font-semibold mb-10 text-teal-400 tracking-widest">THE EXECUTIONERS</h3>
+            <div class="flex justify-center gap-8 flex-wrap">
+                <div class="card rounded-2xl p-6 text-center w-full max-w-xs">
+                    <img class="w-28 h-28 rounded-full mx-auto object-cover border-4 border-teal-500" src="images/rrishabk.jpg" alt="rrishabk">
+                    <h2 class="text-xl font-bold mt-4">rrishabk</h2>
+                    <h4 class="text-teal-400 font-semibold">Club Coordinator</h4>
+                    <div class="flex justify-center gap-4 mt-3">
+                         <a href="https://www.instagram.com/rrishabk/" target="_blank" class="tool-icon"><img class="w-6" src="https://cdn.worldvectorlogo.com/logos/instagram-2016-5.svg" alt="Instagram"></a>
+                         <a href="https://in.linkedin.com/in/rrishabk" target="_blank" class="tool-icon"><img class="w-6" src="https://cdn.worldvectorlogo.com/logos/linkedin-icon-2.svg" alt="LinkedIn"></a>
+                    </div>
+                </div>
+                <div class="card rounded-2xl p-6 text-center w-full max-w-xs">
+                    <img class="w-28 h-28 rounded-full mx-auto object-cover border-4 border-teal-500" src="images/bhavya.jpg" alt="Bhavya Yadav">
+                    <h2 class="text-xl font-bold mt-4">Bhavya Yadav</h2>
+                    <h4 class="text-teal-400 font-semibold">Club Coordinator</h4>
+                    <div class="flex justify-center gap-4 mt-3">
+                        <a href="https://www.instagram.com/bbhavyae/" target="_blank" class="tool-icon"><img class="w-6" src="https://cdn.worldvectorlogo.com/logos/instagram-2016-5.svg" alt="Instagram"></a>
+                        <a href="https://www.linkedin.com/in/bbhavyadav" target="_blank" class="tool-icon"><img class="w-6" src="https://cdn.worldvectorlogo.com/logos/linkedin-icon-2.svg" alt="LinkedIn"></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="mt-20 border-t border-slate-700">
+        <div class="text-center py-16 px-4">
+             <h2 class="text-3xl font-bold mb-4">GOT A PROBLEM? AN IDEA?</h2>
+             <p class="text-lg text-slate-300 max-w-2xl mx-auto">
+                 Reach out. Whether it's a bug in your code or a vision for the next big thing, we're here to connect.
+             </p>
+        </div>
+        <div class="bg-slate-950 text-center py-6">
+             <p class="text-slate-400">&copy; 2025 CSI Dev Wing | Mission Status: Active</p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
