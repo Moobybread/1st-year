@@ -1,12 +1,111 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Intoduction</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Prince — Profile</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+        <style>
+            :root{
+                --bg:#0f1724;
+                --card:#0b1220;
+                --accent:#6ee7b7;
+                --muted:#94a3b8;
+                --glass: rgba(255,255,255,0.04);
+            }
+            *{box-sizing:border-box}
+            body{
+                margin:0;
+                font-family:Inter, system-ui, Arial, sans-serif;
+                background:linear-gradient(180deg,#071028 0%, #07142a 60%);
+                color:#e6eef8;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                min-height:100vh;
+                padding:2rem;
+            }
+            .card{
+                width:100%;
+                max-width:880px;
+                background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+                border:1px solid rgba(255,255,255,0.04);
+                border-radius:14px;
+                padding:1.8rem;
+                display:grid;
+                grid-template-columns:180px 1fr;
+                gap:1.5rem;
+                box-shadow:0 10px 30px rgba(2,6,23,0.6);
+            }
+            .avatar{
+                width:160px;
+                height:160px;
+                border-radius:12px;
+                background:linear-gradient(135deg,var(--accent),#60a5fa);
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                font-weight:700;
+                font-size:48px;
+                color:#012018;
+                box-shadow:0 6px 18px rgba(6,16,32,0.6);
+            }
+            .left{display:flex;flex-direction:column;align-items:center;gap:1rem}
+            h1{margin:0;font-size:1.6rem}
+            .role{color:var(--muted);margin-top:4px}
+            .bio{margin:0.6rem 0 0;padding-right:0.4rem;color:#cfe6ff}
+            .meta{margin-top:1rem;display:flex;gap:0.6rem;flex-wrap:wrap}
+            .chip{background:var(--glass);padding:0.45rem 0.7rem;border-radius:999px;color:var(--muted);font-size:0.9rem;border:1px solid rgba(255,255,255,0.02)}
+            .actions{margin-top:1.2rem;display:flex;gap:0.6rem}
+            .btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:0.6rem 0.9rem;border-radius:8px;color:var(--accent);text-decoration:none;font-weight:600}
+            .main{
+                padding:0.2rem 0.6rem;
+            }
+            .section{margin-bottom:1rem}
+            .section h3{margin:0 0 0.5rem 0;font-size:1rem}
+            .skills{display:flex;gap:0.5rem;flex-wrap:wrap}
+            .skill{background:rgba(255,255,255,0.03);padding:0.4rem 0.6rem;border-radius:8px;border:1px solid rgba(255,255,255,0.02);font-size:0.9rem}
+            footer{margin-top:0.6rem;color:var(--muted);font-size:0.9rem}
+            @media(max-width:720px){
+                .card{grid-template-columns:1fr;max-width:520px}
+                .avatar{width:120px;height:120px;font-size:36px}
+                .left{flex-direction:row;align-items:center}
+            }
+        </style>
     </head>
     <body>
-        <h1>My name is Prince</h1>
-        <p>this is about my intro</p>
-    <p>I am joined the Csi Development club.</p>
-
+        <div class="card">
+            <div class="left">
+                <div class="avatar">P</div>
+                <div style="text-align:center">
+                    <h1>Prince</h1>
+                    <div class="role">Student • Web Developer</div>
+                </div>
+            </div>
+            <div class="main">
+                <p class="bio">Hi — I'm Prince. I enjoy building simple and friendly web experiences. I am a member of the CSI Development Club where I collaborate on projects and learn new technologies.</p>
+                <div class="section">
+                    <h3>Quick info</h3>
+                    <div class="meta">
+                        <div class="chip">Joined CSI Development Club</div>
+                        <div class="chip">Available for collaborations</div>
+                    </div>
+                </div>
+                <div class="section">
+                    <h3>Skills</h3>
+                    <div class="skills">
+                        <div class="skill">HTML</div>
+                        <div class="skill">CSS</div>
+                        <div class="skill">JavaScript</div>
+                        <div class="skill">Git</div>
+                    </div>
+                </div>
+                <div class="actions">
+                    <a class="btn" href="mailto:prince@example.com">Email</a>
+                    <a class="btn" href="#">Portfolio</a>
+                </div>
+                <footer>Built with simple HTML & CSS</footer>
+            </div>
+        </div>
     </body>
 </html>

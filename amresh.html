@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Amresh — Profile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #071028;
+      --card: #071a2b;
+      --muted: #9fb4cc;
+      --accent: #60a5fa;
+      --accent-2: #6ee7b7;
+      --glass: rgba(255,255,255,0.03);
+      --radius: 12px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(96,165,250,0.06), transparent),
+                  linear-gradient(180deg, #041022 0%, #07142a 100%);
+      color:#e8f2ff;
+      padding:2rem;
+      -webkit-font-smoothing:antialiased;
+    }
+    .container{max-width:1100px;margin:0 auto;}
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border:1px solid rgba(255,255,255,0.04);
+      border-radius:16px;
+      padding:1.6rem;
+      box-shadow: 0 10px 30px rgba(2,6,23,0.6);
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:260px 1fr;
+      gap:1.25rem;
+      align-items:start;
+    }
+
+    /* Sidebar */
+    .sidebar{
+      padding:1rem;
+      background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
+      border-radius:var(--radius);
+      border:1px solid rgba(255,255,255,0.03);
+      display:flex;flex-direction:column;gap:0.9rem;align-items:center;text-align:center
+    }
+    .avatar{
+      width:140px;height:140px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:48px;color:#012018;background:linear-gradient(135deg,var(--accent-2),var(--accent));box-shadow:0 8px 20px rgba(6,16,32,0.5)
+    }
+    .name{font-size:1.25rem;font-weight:700;margin-top:0.6rem}
+    .subtitle{color:var(--muted);font-size:0.9rem;margin-bottom:0.25rem}
+    .location{font-size:0.85rem;color:var(--muted)}
+
+    .socials{display:flex;gap:0.6rem;margin-top:0.6rem}
+    .social{padding:0.45rem 0.6rem;border-radius:10px;background:var(--glass);border:1px solid rgba(255,255,255,0.02);color:var(--muted);font-weight:600;text-decoration:none}
+
+    /* Main */
+    .main{
+      padding:0.25rem 0.15rem;
+    }
+    .hero{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .intro{max-width:66%}
+    h1{margin:0;font-size:1.6rem}
+    .lead{color:#cfe6ff;margin-top:0.25rem}
+    .cta{display:inline-flex;gap:0.6rem;margin-top:0.9rem}
+    .btn{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:0.55rem 0.85rem;border-radius:10px;color:var(--accent);text-decoration:none;font-weight:700}
+    .btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#012018;border:none;box-shadow:0 8px 20px rgba(96,165,250,0.08)}
+
+    .sections{margin-top:1rem;display:grid;gap:0.85rem}
+    .panel{background:rgba(255,255,255,0.01);padding:0.9rem;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+    .panel h3{margin:0 0 0.5rem 0}
+    .skills{display:flex;flex-wrap:wrap;gap:0.5rem}
+    .skill{background:linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00));padding:0.45rem 0.7rem;border-radius:10px;border:1px solid rgba(255,255,255,0.02);font-weight:600;color:var(--muted)}
+
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:0.6rem}
+    .project{padding:0.6rem;border-radius:10px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));border:1px solid rgba(255,255,255,0.02)}
+    .project h4{margin:0 0 0.25rem 0}
+    .muted{color:var(--muted);font-size:0.9rem}
+
+    footer{margin-top:1rem;color:var(--muted);font-size:0.9rem;text-align:center}
+
+    /* small screens */
+    @media(max-width:900px){
+      .grid{grid-template-columns:1fr;}
+      .intro{max-width:100%}
+      .projects{grid-template-columns:1fr}
+      .avatar{width:120px;height:120px;font-size:36px}
+    }
+
+    /* hover effects */
+    .project:hover{transform:translateY(-4px);transition:transform 0.18s ease}
+    .skill:hover{transform:translateY(-3px);transition:transform 0.18s ease}
+    .social:hover{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#012018}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card grid">
+      <aside class="sidebar">
+        <div class="avatar">A</div>
+        <div class="name">Amresh Anand</div>
+        <div class="subtitle">Computer Science • Student</div>
+        <div class="location">Member, CSI Development Club</div>
+
+        <div class="socials">
+          <a class="social" href="#">Email</a>
+          <a class="social" href="#">Portfolio</a>
+        </div>
+
+        <div style="width:100%;margin-top:0.5rem;display:flex;gap:0.5rem;justify-content:center">
+          <div style="flex:1;background:var(--glass);padding:0.5rem;border-radius:8px;border:1px solid rgba(255,255,255,0.02)">
+            <div style="font-weight:700">CSI</div>
+            <div class="muted" style="font-size:0.85rem">Active member</div>
+          </div>
+          <div style="flex:1;background:var(--glass);padding:0.5rem;border-radius:8px;border:1px solid rgba(255,255,255,0.02)">
+            <div style="font-weight:700">Open</div>
+            <div class="muted" style="font-size:0.85rem">For collaborations</div>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main">
+        <div class="hero">
+          <div class="intro">
+            <h1>Hi, I'm Amresh — building simple, friendly web experiences.</h1>
+            <p class="lead">Student developer focused on web fundamentals, UI design, and small team projects. I enjoy learning new libraries and shipping useful projects with others in my club.</p>
+            <div class="cta">
+              <a class="btn primary" href="mailto:amresh@example.com">Email</a>
+              <a class="btn" href="#projects">Projects</a>
+            </div>
+          </div>
+          <div style="text-align:right">
+            <div class="panel" style="max-width:260px">
+              <h3>Quick Info</h3>
+              <div class="muted">Location: Your City</div>
+              <div class="muted">Availability: Open to collaborate</div>
+              <div style="margin-top:0.6rem"><span class="skill">HTML</span> <span class="skill">CSS</span> <span class="skill">JavaScript</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sections">
+          <section class="panel" id="about">
+            <h3>About</h3>
+            <p class="muted">I'm a student passionate about web development and design. I contribute to the CSI Development Club, where I work on small apps and learn more about collaboration, version control and user interfaces.</p>
+          </section>
+
+          <section class="panel" id="skills">
+            <h3>Skills</h3>
+            <div class="skills">
+              <span class="skill">HTML</span>
+              <span class="skill">CSS</span>
+              <span class="skill">JavaScript</span>
+              <span class="skill">Git</span>
+              <span class="skill">Responsive UI</span>
+              <span class="skill">Figma (Basics)</span>
+            </div>
+          </section>
+
+          <section class="panel" id="projects">
+            <h3>Projects</h3>
+            <div class="projects">
+              <article class="project">
+                <h4>Study Planner</h4>
+                <div class="muted">A simple task tracker built with vanilla JS to plan weekly study goals.</div>
+              </article>
+              <article class="project">
+                <h4>Club Website</h4>
+                <div class="muted">Collaborative site for the CSI club with announcements and project showcases.</div>
+              </article>
+            </div>
+          </section>
+
+          <section class="panel" id="contact">
+            <h3>Contact</h3>
+            <p class="muted">Feel free to reach out via email or check my portfolio for more work.</p>
+            <div style="margin-top:0.6rem;display:flex;gap:0.6rem;flex-wrap:wrap">
+              <a class="btn" href="mailto:amresh@example.com">Email</a>
+              <a class="btn" href="#">Portfolio</a>
+            </div>
+          </section>
+        </div>
+
+        <footer>Built with simple HTML & CSS — Adapt and personalize this template.</footer>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
