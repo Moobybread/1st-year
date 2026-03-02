@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Intro Page</title>
+  <style>
+    :root{--bg:#071424;--accent:#2ee6c6;--muted:#98a8b9}
+    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
+    .wrap{height:100%;display:grid;place-items:center;background:radial-gradient(1200px 600px at 10% 20%,rgba(46,230,198,0.08),transparent),linear-gradient(180deg,#031324 0%,var(--bg) 60%);color:white;overflow:hidden}
+
+    /* intro card */
+    .intro{
+      width:min(920px,92%);
+      max-width:1100px;
+      height:70vh;
+      min-height:420px;
+      display:grid;grid-template-columns:360px 1fr;gap:28px;align-items:center;
+      background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));
+      border-radius:20px;padding:36px;box-shadow:0 10px 40px rgba(2,7,23,0.6);backdrop-filter:blur(6px)
+    }
+
+    /* left visual */
+    .logo-wrap{display:flex;flex-direction:column;align-items:center;gap:18px}
+    .logo{width:200px;height:200px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(from 210deg,var(--accent),transparent);position:relative;box-shadow:0 8px 30px rgba(46,230,198,0.08), inset 0 -10px 30px rgba(0,0,0,0.4)}
+    .logo .mark{width:120px;height:120px;border-radius:50%;background:linear-gradient(180deg,#0ff1d8,#1bcbb3);display:grid;place-items:center;font-weight:700;color:#04323a;font-size:30px}
+    .logo:after{content:"";position:absolute;inset:0;border-radius:50%;filter:blur(30px);opacity:0.35;animation:glow 2.8s linear infinite}
+    @keyframes glow{0%{transform:scale(0.98);opacity:0.28}50%{transform:scale(1.04);opacity:0.6}100%{transform:scale(0.98);opacity:0.28}}
+
+    .progress{width:160px;height:8px;background:rgba(255,255,255,0.06);border-radius:999px;overflow:hidden}
+    .bar{height:100%;width:0;background:linear-gradient(90deg,var(--accent),#6ce5d1);border-radius:999px;transition:width 300ms linear}
+    .muted{color:var(--muted);font-size:13px;text-align:center}
+
+    /* right content */
+    .content h1{margin:0;font-size:36px;letter-spacing:-0.02em}
+    .content p{margin-top:12px;color:var(--muted);line-height:1.5}
+    .actions{margin-top:22px;display:flex;gap:12px}
+    .btn{padding:10px 16px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
+    .btn.primary{background:var(--accent);color:#023437}
+    .btn.ghost{background:transparent;color:var(--muted);border:1px solid rgba(255,255,255,0.04)}
+
+    /* reveal animation overlay */
+    .overlay{position:fixed;inset:0;background:var(--bg);display:grid;place-items:center;z-index:40}
+    .overlay .reveal{width:110vmax;height:110vmax;background:linear-gradient(45deg,#082836 0%,#07323a 50%,#02151a 100%);border-radius:50%;transform:scale(0);transition:transform 750ms cubic-bezier(.2,.9,.28,1)}
+    .overlay.hidden{visibility:hidden;opacity:0}
+
+    /* main page content that appears after intro */
+    main.site{position:fixed;inset:0;padding:48px;display:flex;align-items:flex-start;justify-content:center;z-index:10;opacity:0;pointer-events:none;transition:opacity 360ms}
+    main.site.visible{opacity:1;pointer-events:auto}
+    .site-card{width:min(1100px,92%);background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:28px;border-radius:14px}
+
+    /* small responsive tweaks */
+    @media (max-width:700px){.intro{grid-template-columns:1fr;align-items:start;padding:22px;height:85vh}.logo{width:140px;height:140px}.content h1{font-size:24px}}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="intro" role="region" aria-label="Intro">
+      <div class="logo-wrap">
+        <div class="logo" aria-hidden>
+          <div class="mark">TI</div>
+        </div>
+        <div class="progress" aria-hidden>
+          <div class="bar" id="progressBar"></div>
+        </div>
+        <div class="muted">Loading assets</div>
+      </div>
+
+      <div class="content">
+        <h1 id="headline">TaskOrbit — Ship work faster</h1>
+        <p id="sub">A lightweight task management prototype. This intro animates once. Use the "Skip" button to reveal the app immediately.</p>
+        <div class="actions">
+          <button class="btn primary" id="enter">Enter</button>
+          <button class="btn ghost" id="skip">Skip</button>
+        </div>
+        <div style="margin-top:18px;color:var(--muted);font-size:13px">Tip: the animation runs automatically and then reveals the page.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay" id="overlay" aria-hidden>
+    <div class="reveal" id="revealCircle"></div>
+  </div>
+
+  <main class="site" id="site">
+    <div class="site-card">
+      <h2>Welcome to TaskOrbit</h2>
+      <p style="color:var(--muted)"></p>
+
+      <section style="margin-top:20px">
+        <h3>Quick links</h3>
+        <ul style="color:var(--muted)">
+          <li>Projects</li>
+          <li>Boards</li>
+          <li>Reports</li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <script>
+    (function(){
+      const bar = document.getElementById('progressBar');
+      const overlay = document.getElementById('overlay');
+      const reveal = document.getElementById('revealCircle');
+      const site = document.getElementById('site');
+      const skip = document.getElementById('skip');
+      const enter = document.getElementById('enter');
+
+      let progress = 0; let running = true;
+
+      function step(){
+        progress += Math.random() * 22 + 6; if(progress>100) progress=100;
+        bar.style.width = progress + '%';
+        if(progress < 100) setTimeout(step, 240 + Math.random()*160);
+        else finishIntro();
+      }
+
+      function finishIntro(){
+        if(!running) return;
+        running = false;
+        // animate logo reveal circle grow
+        reveal.style.transform = 'scale(1)';
+        // small delay to let circle show then reveal site
+        setTimeout(()=>{
+          overlay.classList.add('hidden');
+          site.classList.add('visible');
+          // optional: remove overlay from DOM after animation
+          setTimeout(()=>overlay.style.display='none',600);
+        },520);
+      }
+
+      // auto progress
+      step();
+
+      // allow user to skip
+      skip.addEventListener('click',()=>{
+        progress = 100; bar.style.width='100%';
+        finishIntro();
+      });
+
+      // enter button: same as skip but also focus main
+      enter.addEventListener('click',()=>{
+        progress = 100; bar.style.width='100%';
+        finishIntro();
+        setTimeout(()=>document.querySelector('.site-card h2').focus(),420);
+      });
+
+      // keyboard shortcut: press Enter or Space to skip
+      document.addEventListener('keydown',e=>{
+        if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); skip.click(); }
+      });
+
+      // accessibility: hide overlay from assistive tech when removed
+      overlay.addEventListener('transitionend',()=>{
+        if(overlay.classList.contains('hidden')) overlay.setAttribute('aria-hidden','true');
+      });
+
+      // small timer safety: in case resources hang, force finish at 4.5s
+      setTimeout(()=>{ if(running) { progress=100; bar.style.width='100%'; finishIntro(); } },4500);
+
+    })();
+  </script>
+</body>
+</html>
